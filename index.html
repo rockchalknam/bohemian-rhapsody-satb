@@ -350,15 +350,15 @@
         <!-- Full Performance -->
         <div class="section">
             <div class="section-label">Full Performance</div>
-            <div class="track active" data-track="BR-MarkBrymer-Full" onclick="toggleTrack(this)">
+            <div class="track active" data-track="bohemian" onclick="toggleTrack(this)">
                 <div class="track-icon" style="background:#0d2a4a;">🎼</div>
                 <div class="track-info">
                     <div class="track-name">Full Choir Mix</div>
                     <div class="track-desc">Complete performance &mdash; all parts together</div>
                 </div>
                 <div class="track-right">
-                    <input class="vol-mini" type="range" min="0" max="100" value="100" onclick="event.stopPropagation()" oninput="setVolume('BR-MarkBrymer-Full', this.value)" />
-                    <div class="track-toggle on" id="toggle-BR-MarkBrymer-Full"></div>
+                    <input class="vol-mini" type="range" min="0" max="100" value="100" onclick="event.stopPropagation()" oninput="setVolume('bohemian', this.value)" />
+                    <div class="track-toggle on" id="toggle-bohemian"></div>
                 </div>
             </div>
         </div>
@@ -479,7 +479,7 @@
 
 <script>
     const trackNames = [
-        'BR-MarkBrymer-Full',
+        'bohemian',
         'BR-MarkBrymer-Soprano1',
         'BR-MarkBrymer-Soprano2',
         'BR-MarkBrymer-Alto',
@@ -490,7 +490,7 @@
     ];
 
     const defaultStates = {
-        'BR-MarkBrymer-Full': true,
+        'bohemian': true,
         'BR-MarkBrymer-Soprano1': false,
         'BR-MarkBrymer-Soprano2': false,
         'BR-MarkBrymer-Alto': false,
@@ -501,7 +501,7 @@
     };
 
     const defaultVolumes = {
-        'BR-MarkBrymer-Full': 1.0,
+        'bohemian': 1.0,
         'BR-MarkBrymer-Soprano1': 1.0,
         'BR-MarkBrymer-Soprano2': 1.0,
         'BR-MarkBrymer-Alto': 1.0,
@@ -516,7 +516,7 @@
     let isPlaying = false;
     let isMuted = false;
     let currentSpeed = 1;
-    const masterTrack = 'bohemian.mp3';
+    const masterTrack = 'bohemian';
 
     trackNames.forEach(name => {
         const audio = new Audio(`${name}.mp3`);
@@ -630,7 +630,7 @@
     }
 
     function presetFull() {
-        applyPreset({ 'BR-MarkBrymer-Full': true });
+        applyPreset({ 'bohemian': true });
         document.getElementById('preset-full').classList.add('active-quick');
     }
 
